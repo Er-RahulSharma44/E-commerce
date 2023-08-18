@@ -68,3 +68,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+step 1 ------ npx create-react-app ecomerce
+
+srep2 --------  npm i phosphor-react react-router-dom
+
+step 3 -   npm install react-bootstrap bootstrap 
+          <!-- using bootstap -->
+    * import 'bootstrap/dist/css/bootstrap.css';     
