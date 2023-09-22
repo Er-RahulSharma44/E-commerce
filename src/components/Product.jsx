@@ -5,7 +5,7 @@ import { MyContext } from "../CONTEXT/Mycontext";
 
 const Product = (props) => {
   const { Id, ProductName, Price, ImageUrl } = props.Data;
-   const { cart, addToCart } = useContext(MyContext);
+   const {addedCart, removeFromCart , cart } = useContext(MyContext);
   return (
     <div>
       <Card style={{ width: "18rem" }}>
@@ -24,10 +24,16 @@ const Product = (props) => {
         <Card.Body>
           <Button
             variant="outline-success"
-            onClick={() => addToCart(Id)}
+            onClick={() => addedCart(Id)}
           >{`Add to cart ${
             cart[Id.toString()] ? cart[Id.toString()] : ""
           }`}</Button>
+           {/* <Button
+            variant="outline-success"
+            onClick={() => removeFromCart(Id)}
+          >{`Remove From Cart ${
+            cart[Id.toString()] ? cart[Id.toString()] : ""
+          }`}</Button> */}
         </Card.Body>
       </Card>
     </div>

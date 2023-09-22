@@ -14,6 +14,7 @@ function GetContext(props) {
   const [text, setText] = useState("");
   const [filtered, setfiltered] = useState();
   const [sum, setsum] = useState(0);
+  const [alert, setalert] = useState(null);
 
   // console.log(cart)
 
@@ -24,6 +25,27 @@ function GetContext(props) {
      setsum((prev) => (prev + 1 ))
  }
   };
+
+  const addedCart = (iteamId) => {
+    
+   
+    if(cart[iteamId]===0){
+      setcart((prev) => ({ ...prev, [iteamId]: prev[iteamId] + 1 }));
+     setsum((prev) => (prev + 1 ))
+     showalert("alreday success")
+ }else {
+     showalert("alreday added")
+ }
+  };
+
+  const showalert =(message)=>{
+    setalert({msg : message,
+  })
+   setTimeout(() => {
+     setalert(null)
+     
+   }, 1500);
+  }
 
   const removeFromCart = (iteamId) => {
     setcart((prev) => ({ ...prev, [iteamId]: prev[iteamId] - 1 }));
@@ -65,7 +87,9 @@ function GetContext(props) {
           filtered,
           updateCart,
           filteredProducts,
-          sum
+          addedCart,
+          sum,
+          alert
         }}
       >
         {props.children}
