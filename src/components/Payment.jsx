@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Payment = () => {
-  return (
-    <div>
-      select payment method
-    </div>
-  )
-}
+  return <div style={{ minHeight: "66vh" }}>select payment method</div>;
+};
 
-export default Payment
+export default Payment;

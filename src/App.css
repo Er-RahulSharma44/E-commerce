@@ -36,3 +36,63 @@
     transform: rotate(360deg);
   }
 }
+.cardhover{
+  transition: 0.5s ease;
+}
+
+.cardhover:hover{
+ 
+   transform: scale(1.05);
+}
+
+.ftr{
+  height: 150px;
+  background-color: black;
+  opacity: 0.8;
+ /* position: absolute;
+ left:0;   
+ bottom:0;  */
+ width: 100%;
+}
+
+.main{
+  display:flex;
+  justify-content: space-around;
+  
+}
+
+.colm1 h4, .colm2 h4{
+  color: white;
+
+}
+
+.colm3 h2{
+  color: white;
+}
+
+.colm1, .colm2, .colm3{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.colmlist{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.iconList{
+  display: flex;
+  gap: 8px;
+}
+
+.iconList div i{
+  font-size: 2vw;
+}
+
+/* html, body{
+  height: 100%;
+} */

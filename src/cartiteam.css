@@ -1,0 +1,19 @@
+.max-width{
+    margin-left: 250px;
+}
+ 
+.group{
+   /* margin-left: 100px; */
+   display: flex;
+   justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .max-width{
+        margin-left: 0px;
+    }
+    /* .marginleft{
+        margin-left: 60px;
+     } */
+     
+}

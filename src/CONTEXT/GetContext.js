@@ -14,43 +14,39 @@ function GetContext(props) {
   const [text, setText] = useState("");
   const [filtered, setfiltered] = useState();
   const [sum, setsum] = useState(0);
-  const [alert, setalert] = useState(null);
+  const [alert1, setalert] = useState(null);
 
-  // console.log(cart)
+  // console.log(cart);
 
   const addToCart = (iteamId) => {
     setcart((prev) => ({ ...prev, [iteamId]: prev[iteamId] + 1 }));
-   
-    if(cart[iteamId]===0){
-     setsum((prev) => (prev + 1 ))
- }
+
+    if (cart[iteamId] === 0) {
+      setsum((prev) => prev + 1);
+    }
   };
 
   const addedCart = (iteamId) => {
-    
-   
-    if(cart[iteamId]===0){
+    if (cart[iteamId] === 0) {
       setcart((prev) => ({ ...prev, [iteamId]: prev[iteamId] + 1 }));
-     setsum((prev) => (prev + 1 ))
-     showalert("alreday success")
- }else {
-     showalert("alreday added")
- }
+      setsum((prev) => prev + 1);
+      alert("added successfully");
+    } else {
+      alert("alreday added in cart");
+    }
   };
 
-  const showalert =(message)=>{
-    setalert({msg : message,
-  })
-   setTimeout(() => {
-     setalert(null)
-     
-   }, 1500);
-  }
+  const showalert = (message) => {
+    setalert({ msg: message });
+    setTimeout(() => {
+      setalert(null);
+    }, 1500);
+  };
 
   const removeFromCart = (iteamId) => {
     setcart((prev) => ({ ...prev, [iteamId]: prev[iteamId] - 1 }));
-    if(cart[iteamId]===1){
-      setsum((prev) => (prev - 1 ))   
+    if (cart[iteamId] === 1) {
+      setsum((prev) => prev - 1);
     }
   };
 
@@ -59,7 +55,7 @@ function GetContext(props) {
   };
 
   const filteredProducts = (text) => {
-    if (text){
+    if (text) {
       setfiltered(
         Data.filter((product) => {
           return product.ProductName.toLowerCase().includes(text);
@@ -67,15 +63,10 @@ function GetContext(props) {
         })
       );
     }
-    
   };
 
-
-  
-
-
   return (
-    <div>
+    <>
       <MyContext.Provider
         value={{
           cart,
@@ -89,12 +80,12 @@ function GetContext(props) {
           filteredProducts,
           addedCart,
           sum,
-          alert
+          alert,
         }}
       >
         {props.children}
       </MyContext.Provider>
-    </div>
+    </>
   );
 }
 export default GetContext;
